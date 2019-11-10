@@ -9,7 +9,7 @@ public class SpawnPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SpawnObject();
     }
 
     // Update is called once per frame
@@ -18,8 +18,9 @@ public class SpawnPoint : MonoBehaviour
         
     }
 
-    private void SpawnObject()
+    public void SpawnObject()
     {
-        
+        GameObject spawnedObject = Instantiate(objectToSpawn, transform.position, transform.rotation);
+        spawnedObject.transform.SetParent(gameObject.transform.parent, false);
     }
 }

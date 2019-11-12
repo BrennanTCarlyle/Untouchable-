@@ -16,7 +16,11 @@ public class Movement : MonoBehaviour
     // Forces that involves the player.
     public float jumpForce;
     public float gravForce;
+    public float dashSpeed;
     public bool grounded;
+    public bool didDash;
+
+    private float meter;
 
     
     // Start is called before the first frame update
@@ -24,6 +28,8 @@ public class Movement : MonoBehaviour
     {
         // Sets the player as grounded so they are allowed to jump.
         grounded = true;
+
+        didDash = false;
 
         // Players rigidbody. Yep.
         rb = GetComponent<Rigidbody>();
@@ -41,6 +47,10 @@ public class Movement : MonoBehaviour
 
         // Function that adds "weight" to the player when they are coming back down.
         Gravity();
+
+        Dashing();
+
+        DashMeter();
     }
 
     private void FixedUpdate()
@@ -56,6 +66,8 @@ public class Movement : MonoBehaviour
 
         // Moves the rigidbody towards a position.
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+
+        
     }
 
     void Jump()
@@ -71,9 +83,18 @@ public class Movement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // If player collides with the platform, they are allowed to jump again.
-        if(collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Platform"))
         {
             grounded = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("NearMiss"))
+        {
+            meter += 10;
+            Debug.Log(meter);
         }
     }
 
@@ -84,6 +105,28 @@ public class Movement : MonoBehaviour
         {
             rb.AddForce(0, -gravForce, 0, ForceMode.Impulse);
         }
+    }
+
+    void Dashing()
+    {
+        if (Input.GetMouseButtonDown(0) && didDash == false)
+        {
+            rb.AddForce(0, 0, dashSpeed, ForceMode.Impulse);
+            meter = 0;
+        }
+    }
+
+    void DashMeter()
+    {
+        if(meter < 100)
+        {
+            didDash = true;
+        }
+        else if(meter == 100)
+        {
+            didDash = false;
+        }
+            
     }
         
 

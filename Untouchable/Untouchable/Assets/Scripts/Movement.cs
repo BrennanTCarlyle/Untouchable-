@@ -22,7 +22,13 @@ public class Movement : MonoBehaviour
 
     private float meter;
 
-    
+    [Header("Jump audio settings")]
+    public AudioClip landingSound;
+    public AudioClip landingSound2;
+    public AudioClip landingSound3;
+
+    private List<AudioClip> landingSoundsList = new List<AudioClip>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +39,11 @@ public class Movement : MonoBehaviour
 
         // Players rigidbody. Yep.
         rb = GetComponent<Rigidbody>();
+
+
+        landingSoundsList.Add(landingSound);
+        landingSoundsList.Add(landingSound2);
+        landingSoundsList.Add(landingSound3);
     }
 
     // Update is called once per frame
@@ -66,8 +77,6 @@ public class Movement : MonoBehaviour
 
         // Moves the rigidbody towards a position.
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
-
-        
     }
 
     void Jump()
@@ -86,6 +95,7 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             grounded = true;
+            StartCoroutine(playSound());
         }
     }
 
@@ -128,6 +138,16 @@ public class Movement : MonoBehaviour
         }
             
     }
+
+    IEnumerator playSound()
+    {
+
+        AudioSource.PlayClipAtPoint(landingSoundsList[Random.Range(0, landingSoundsList.Count)], transform.position);
+
         
+
+        print(landingSound);
+        yield break;
+    }
 
 }

@@ -1065,6 +1065,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7466593640243850264, guid: 92a5b3e77863b58499d2e8f62ff759a0,
+        type: 3}
+      propertyPath: bashSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 549a4370b00ef264cbf0a34eadaecf97, type: 3}
+    - target: {fileID: 7466593640243850264, guid: 92a5b3e77863b58499d2e8f62ff759a0,
+        type: 3}
+      propertyPath: bashSound2
+      value: 
+      objectReference: {fileID: 8300000, guid: 70b08a526e9cd6143ab3aebab34dcec4, type: 3}
+    - target: {fileID: 7466593640243850264, guid: 92a5b3e77863b58499d2e8f62ff759a0,
+        type: 3}
+      propertyPath: bashSound3
+      value: 
+      objectReference: {fileID: 8300000, guid: 114fae6fdf0901946b8a5082bfe0770b, type: 3}
     - target: {fileID: 7466593639561076008, guid: 92a5b3e77863b58499d2e8f62ff759a0,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -1358,6 +1373,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4306586490296388592, guid: 97d46798703871346a5e35f5ef7d764c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306586489212556634, guid: 97d46798703871346a5e35f5ef7d764c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4306586489986503485, guid: 97d46798703871346a5e35f5ef7d764c, type: 3}
     - {fileID: 4306586489986503474, guid: 97d46798703871346a5e35f5ef7d764c, type: 3}
@@ -1526,6 +1551,11 @@ PrefabInstance:
     - target: {fileID: 1765120161609614482, guid: 166bbcf877f8090499a7477ece4ef8f7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765120161609614485, guid: 166bbcf877f8090499a7477ece4ef8f7,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

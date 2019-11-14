@@ -1,6 +1,12 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Untouchable/Untouchable/Assets/Prefabs/Section.prefab.meta
 guid: 674d2e01aad784492b13ce8df24b9642
 PrefabImporter:
+=======
+guid: 5188fb4b0d5b558488c2ef024d5b13c7
+folderAsset: yes
+DefaultImporter:
+>>>>>>> 358bc4b957b7543ce608207473973a2f7ffb3fbb:Untouchable/Untouchable/Assets/Sounds.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

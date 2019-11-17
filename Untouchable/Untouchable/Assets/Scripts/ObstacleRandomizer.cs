@@ -6,6 +6,8 @@ public class ObstacleRandomizer : MonoBehaviour
 {
     public GameObject[] obstaclePlatforms;
     public GameObject[] obstacles;
+    public bool isRandom;
+    public int[] manualSpawnClockwise;
     public int randomSpawnChance;
     private bool alreadyTriggered;
 
@@ -14,13 +16,27 @@ public class ObstacleRandomizer : MonoBehaviour
         if (!alreadyTriggered)
         {
             alreadyTriggered = true;
-            if(other.gameObject.CompareTag("Player"))
+            if(isRandom)
             {
-                for(int i = 0; i < randomSpawnChance; i++)
+                if(other.gameObject.CompareTag("Player"))
                 {
-                    obstaclePlatforms[i].GetComponent<SpawnPoint>().SpawnObject
-                        (gameObject, obstacles[Random.Range(0,randomSpawnChance)]);
+                    for(int i = 0; i < randomSpawnChance; i++)
+                    {
+                        obstaclePlatforms[i].GetComponent<SpawnPoint>().SpawnObject
+                            (gameObject, obstacles[Random.Range(0,randomSpawnChance)], 0);
+                    }
                 }
+            }
+            else
+            {
+                if(other.gameObject.CompareTag("Player"))
+                {
+                    for(int i = 0; i < randomSpawnChance; i++)
+                    {
+                        obstaclePlatforms[i].GetComponent<SpawnPoint>().SpawnObject
+                            (gameObject, obstacles[manualSpawnClockwise[i]], 0);
+                    }
+                }                
             }
         }
     }

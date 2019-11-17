@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7466593639561076013}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.17, z: 0.34}
+  m_LocalRotation: {x: -0.045083053, y: -0, z: -0, w: 0.99898326}
+  m_LocalPosition: {x: 0, y: 0.589, z: 0.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7466593640243850260}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -5.168, y: 0, z: 0}
 --- !u!20 &7466593639561076015
 Camera:
   m_ObjectHideFlags: 0
@@ -59,7 +59,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -176,7 +176,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7466593640243850270}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cd06b77fc6e4646a22182fe2e0b508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   jumpForce: 15
   gravForce: 0.5
   dashSpeed: 10
@@ -241,6 +241,9 @@ MonoBehaviour:
   landingSound: {fileID: 8300000, guid: c446da9cb3e515649b36c3510eaff965, type: 3}
   landingSound2: {fileID: 8300000, guid: bb695c1261447fc4b8c2fdcf2a42c188, type: 3}
   landingSound3: {fileID: 8300000, guid: c3bf8cdef315db945939ed09990a3229, type: 3}
+  bashSound: {fileID: 0}
+  bashSound2: {fileID: 0}
+  bashSound3: {fileID: 0}
 --- !u!54 &7466593640243850271
 Rigidbody:
   m_ObjectHideFlags: 0

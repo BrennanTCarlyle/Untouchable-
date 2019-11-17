@@ -159,7 +159,6 @@ public class Movement : MonoBehaviour
     IEnumerator PlaySound(List<AudioClip> soundList)
     {
         AudioSource.PlayClipAtPoint(soundList[Random.Range(0, soundList.Count)], transform.position);
-        print(soundList);
         yield break;
     }
 

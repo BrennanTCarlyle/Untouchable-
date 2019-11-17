@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4306586489986503487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -5, z: 9.29}
-  m_LocalScale: {x: 6, y: 1, z: 6}
+  m_LocalScale: {x: 0.66666675, y: 1, z: 0.3}
   m_Children:
   - {fileID: 4306586490296388593}
   - {fileID: 4278294408490602248}
@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4306586489986503487}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -102,11 +102,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4306586489986503484}
     m_Modifications:
-    - target: {fileID: 43803996919519661, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
-        type: 3}
-      propertyPath: m_Name
-      value: PillarHolder
-      objectReference: {fileID: 0}
     - target: {fileID: 43803996919519660, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -162,6 +157,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 43803996919519661, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Name
+      value: PillarHolder
+      objectReference: {fileID: 0}
     - target: {fileID: 43803995856127751, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
         type: 3}
       propertyPath: m_TagString
@@ -182,11 +182,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4306586489986503484}
     m_Modifications:
-    - target: {fileID: 43803996919519661, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
-        type: 3}
-      propertyPath: m_Name
-      value: PillarHolder (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 43803996919519660, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -242,6 +237,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 43803996919519661, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Name
+      value: PillarHolder (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 43803995856127751, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
         type: 3}
       propertyPath: m_TagString
@@ -262,11 +262,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4306586489986503484}
     m_Modifications:
-    - target: {fileID: 43803996919519661, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
-        type: 3}
-      propertyPath: m_Name
-      value: PillarHolder (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 43803996919519660, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -321,6 +316,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 43803996919519661, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Name
+      value: PillarHolder (1)
       objectReference: {fileID: 0}
     - target: {fileID: 43803995856127751, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
         type: 3}

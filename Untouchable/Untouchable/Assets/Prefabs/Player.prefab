@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 7466593640243850266}
   - component: {fileID: 7466593640243850265}
   - component: {fileID: 7466593640243850264}
+  - component: {fileID: 297296222126905255}
   - component: {fileID: 7466593640243850271}
   m_Layer: 0
   m_Name: Player
@@ -241,6 +242,22 @@ MonoBehaviour:
   landingSound: {fileID: 8300000, guid: c446da9cb3e515649b36c3510eaff965, type: 3}
   landingSound2: {fileID: 8300000, guid: bb695c1261447fc4b8c2fdcf2a42c188, type: 3}
   landingSound3: {fileID: 8300000, guid: c3bf8cdef315db945939ed09990a3229, type: 3}
+  bashSound: {fileID: 0}
+  bashSound2: {fileID: 0}
+  bashSound3: {fileID: 0}
+--- !u!114 &297296222126905255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466593640243850270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32a810f7de004409a7d115cf23ed6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathPanel: {fileID: 0}
 --- !u!54 &7466593640243850271
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -5,7 +5,10 @@ using UnityEngine;
 public class EnemyBlockBehaviour : MonoBehaviour
 {
     [Tooltip("Movement speed")]
-    public int speed;
+    public int minSpeed;
+    public int maxSpeed;
+
+    private int speed;
 
     public int killTimer = 3;
 
@@ -13,6 +16,7 @@ public class EnemyBlockBehaviour : MonoBehaviour
     void Start()
     {
         Invoke("killSelf", killTimer);
+        speed = Random.Range(minSpeed, maxSpeed);
     }
 
     // Update is called once per frame

@@ -6,6 +6,11 @@ public class ObstacleMovement : MonoBehaviour
 {
     public int speed;
 
+    void Awake()
+    {
+        Time.timeScale = 1;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

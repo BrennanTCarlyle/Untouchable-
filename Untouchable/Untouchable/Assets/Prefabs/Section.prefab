@@ -58,7 +58,7 @@ MonoBehaviour:
   - {fileID: 8234331447878323700, guid: c4563ec323d084788b36b4ec130f3550, type: 3}
   - {fileID: 2081288511293706522, guid: acb60dc7b04118c48a732bfa72273cec, type: 3}
   isRandom: 0
-  manualSpawnClockwise: 000000000100000001000000
+  manualSpawnClockwise: 00000000010000000000000001000000
   randomSpawnChance: 3
 --- !u!65 &1428711802
 BoxCollider:
@@ -194,12 +194,12 @@ PrefabInstance:
     - target: {fileID: 6966531329245089474, guid: c3d5aa0e24cb044a79875646ad06ba1f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6966531329245089474, guid: c3d5aa0e24cb044a79875646ad06ba1f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6966531329245089474, guid: c3d5aa0e24cb044a79875646ad06ba1f,
         type: 3}
@@ -219,7 +219,7 @@ PrefabInstance:
     - target: {fileID: 6966531329245089474, guid: c3d5aa0e24cb044a79875646ad06ba1f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3d5aa0e24cb044a79875646ad06ba1f, type: 3}

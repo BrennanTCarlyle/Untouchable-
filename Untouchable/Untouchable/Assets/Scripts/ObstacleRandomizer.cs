@@ -31,7 +31,7 @@ public class ObstacleRandomizer : MonoBehaviour
             {
                 if(other.gameObject.CompareTag("Player"))
                 {
-                    for(int i = 0; i < randomSpawnChance; i++)
+                    for(int i = 0; i < manualSpawnClockwise.Length; i++)
                     {
                         obstaclePlatforms[i].GetComponent<SpawnPoint>().SpawnObject
                             (gameObject, obstacles[manualSpawnClockwise[i]]);

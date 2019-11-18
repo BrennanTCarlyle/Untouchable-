@@ -11,8 +11,7 @@ public class LifeBehavior : MonoBehaviour
     {
         if(other.gameObject.CompareTag("KillBox"))
         {
-            DeathPanel.SetActive(true);
-            Time.timeScale = 0;
+            Death();
         }
     }
 
@@ -20,9 +19,16 @@ public class LifeBehavior : MonoBehaviour
     {
         if(other.gameObject.CompareTag("KillBox"))
         {
-            DeathPanel.SetActive(true);
-            Time.timeScale = 0;
+            Death();
         }        
+    }
+
+    private void Death()
+    {
+        DeathPanel.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = Cursor.visible;
     }
 
     public void LoadSceneName(string givenSceneName)

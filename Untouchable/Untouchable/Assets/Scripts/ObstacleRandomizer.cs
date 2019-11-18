@@ -23,7 +23,7 @@ public class ObstacleRandomizer : MonoBehaviour
                     for(int i = 0; i < randomSpawnChance; i++)
                     {
                         obstaclePlatforms[i].GetComponent<SpawnPoint>().SpawnObject
-                            (gameObject, obstacles[Random.Range(0,randomSpawnChance)], 0);
+                            (gameObject, obstacles[Random.Range(0,randomSpawnChance)]);
                     }
                 }
             }
@@ -31,10 +31,10 @@ public class ObstacleRandomizer : MonoBehaviour
             {
                 if(other.gameObject.CompareTag("Player"))
                 {
-                    for(int i = 0; i < randomSpawnChance; i++)
+                    for(int i = 0; i < manualSpawnClockwise.Length; i++)
                     {
                         obstaclePlatforms[i].GetComponent<SpawnPoint>().SpawnObject
-                            (gameObject, obstacles[manualSpawnClockwise[i]], 0);
+                            (gameObject, obstacles[manualSpawnClockwise[i]]);
                     }
                 }                
             }

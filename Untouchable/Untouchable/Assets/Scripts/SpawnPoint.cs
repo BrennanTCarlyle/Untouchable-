@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    public void SpawnObject(GameObject givenParent, GameObject objectToSpawn, float height)
+    public void SpawnObject(GameObject givenParent, GameObject objectToSpawn)
     {
-        GameObject spawnedObject = Instantiate(objectToSpawn, new Vector3(
-        transform.position.x, transform.position.y + height, transform.position.z), transform.rotation);
-        spawnedObject.transform.SetParent(givenParent.transform, true);
+        GameObject spawnedObject = Instantiate(objectToSpawn, transform.position, transform.rotation);
+        spawnedObject.transform.SetParent(gameObject.transform, true);
+        //spawnedObject.transform.position = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
     }
 }

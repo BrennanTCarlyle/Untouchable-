@@ -435,11 +435,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7466593640243850270, guid: 92a5b3e77863b58499d2e8f62ff759a0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7466593640243850260, guid: 92a5b3e77863b58499d2e8f62ff759a0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -495,13 +490,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7466593640243850264, guid: 92a5b3e77863b58499d2e8f62ff759a0,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 297296222126905255, guid: 92a5b3e77863b58499d2e8f62ff759a0,
-        type: 3}
+    - target: {fileID: 2006365649, guid: 92a5b3e77863b58499d2e8f62ff759a0, type: 3}
       propertyPath: DeathPanel
       value: 
       objectReference: {fileID: 1444509056}
@@ -762,7 +751,7 @@ GameObject:
   - component: {fileID: 1448248202}
   - component: {fileID: 1448248201}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: FallKill
   m_TagString: KillBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1264,25 +1253,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2006365648 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7466593640243850270, guid: 92a5b3e77863b58499d2e8f62ff759a0,
+--- !u!114 &2006365649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2006365649, guid: 92a5b3e77863b58499d2e8f62ff759a0,
     type: 3}
   m_PrefabInstance: {fileID: 1140861578}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2006365649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006365648}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b32a810f7de004409a7d115cf23ed6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeathPanel: {fileID: 1444509056}
 --- !u!1001 &2065835503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1437,11 +1419,6 @@ PrefabInstance:
     - target: {fileID: 8330329053286791166, guid: 223c613c50cea4b72bdabccd71fa7427,
         type: 3}
       propertyPath: m_Name
-      value: KillBox
-      objectReference: {fileID: 0}
-    - target: {fileID: 8330329053286791166, guid: 223c613c50cea4b72bdabccd71fa7427,
-        type: 3}
-      propertyPath: m_TagString
       value: KillBox
       objectReference: {fileID: 0}
     - target: {fileID: 8330329053286791162, guid: 223c613c50cea4b72bdabccd71fa7427,

@@ -44,7 +44,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 7466593640243850265}
   - component: {fileID: 7466593640243850264}
   - component: {fileID: 7466593640243850271}
+  - component: {fileID: 2006365649}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -176,7 +177,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7466593640243850270}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -232,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cd06b77fc6e4646a22182fe2e0b508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 22
   jumpForce: 15
   gravForce: 0.5
   dashSpeed: 10
@@ -241,9 +242,9 @@ MonoBehaviour:
   landingSound: {fileID: 8300000, guid: c446da9cb3e515649b36c3510eaff965, type: 3}
   landingSound2: {fileID: 8300000, guid: bb695c1261447fc4b8c2fdcf2a42c188, type: 3}
   landingSound3: {fileID: 8300000, guid: c3bf8cdef315db945939ed09990a3229, type: 3}
-  bashSound: {fileID: 0}
-  bashSound2: {fileID: 0}
-  bashSound3: {fileID: 0}
+  bashSound: {fileID: 8300000, guid: 549a4370b00ef264cbf0a34eadaecf97, type: 3}
+  bashSound2: {fileID: 8300000, guid: 70b08a526e9cd6143ab3aebab34dcec4, type: 3}
+  bashSound3: {fileID: 8300000, guid: 114fae6fdf0901946b8a5082bfe0770b, type: 3}
 --- !u!54 &7466593640243850271
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -260,3 +261,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &2006365649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466593640243850270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b32a810f7de004409a7d115cf23ed6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathPanel: {fileID: 0}

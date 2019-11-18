@@ -40,8 +40,9 @@ public class Movement : MonoBehaviour
     {
         // Sets the player as grounded so they are allowed to jump.
         grounded = true;
-
+    
         didDash = false;
+        Time.timeScale = 1.0f;
 
         // Players rigidbody. Yep.
         rb = GetComponent<Rigidbody>();

@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     private Vector3 RightMovement;
     private Rigidbody rb;
     private Vector3 velocity;
+   
 
     // Forces that involves the player.
     public float jumpForce;
@@ -19,43 +20,27 @@ public class Movement : MonoBehaviour
     public float dashSpeed;
     public bool grounded;
     public bool didDash;
+   
 
-    private float meter;
+    public float meter;
 
-    [Header("Jump audio settings")]
-    public AudioClip landingSound;
-    public AudioClip landingSound2;
-    public AudioClip landingSound3;
-    private List<AudioClip> landingSoundsList = new List<AudioClip>();
+    private IEnumerator DashState;
 
-
-    [Header("Bash audio settings")]
-    public AudioClip bashSound;
-    public AudioClip bashSound2;
-    public AudioClip bashSound3;
-    private List<AudioClip> bashSoundsList = new List<AudioClip>();
-
+    
     // Start is called before the first frame update
     void Start()
     {
         // Sets the player as grounded so they are allowed to jump.
         grounded = true;
-    
-        didDash = false;
-        Time.timeScale = 1.0f;
+
+        didDash = true;
+
+        DashState = yeet(5f);
+
 
         // Players rigidbody. Yep.
         rb = GetComponent<Rigidbody>();
-
-        // Add jump sound effects
-        landingSoundsList.Add(landingSound);
-        landingSoundsList.Add(landingSound2);
-        landingSoundsList.Add(landingSound3);
-
-        // Add bash sound effects
-        bashSoundsList.Add(bashSound);
-        bashSoundsList.Add(bashSound2);
-        bashSoundsList.Add(bashSound3);
+        
     }
 
     // Update is called once per frame
@@ -71,7 +56,7 @@ public class Movement : MonoBehaviour
         // Function that adds "weight" to the player when they are coming back down.
         Gravity();
 
-        Dashing();
+        
 
         DashMeter();
     }
@@ -89,6 +74,8 @@ public class Movement : MonoBehaviour
 
         // Moves the rigidbody towards a position.
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+
+        
     }
 
     void Jump()
@@ -107,13 +94,6 @@ public class Movement : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             grounded = true;
-            StartCoroutine(PlaySound(landingSoundsList));
-        }
-
-        // If player collides with the platform, they are allowed to jump again.
-        if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            StartCoroutine(PlaySound(bashSoundsList));
         }
     }
 
@@ -122,8 +102,11 @@ public class Movement : MonoBehaviour
         if (other.gameObject.CompareTag("NearMiss"))
         {
             meter += 10;
+            meter = Mathf.Clamp(meter, 0, 100);
             Debug.Log(meter);
         }
+
+
     }
 
     void Gravity()
@@ -137,10 +120,11 @@ public class Movement : MonoBehaviour
 
     void Dashing()
     {
-        if (Input.GetMouseButtonDown(0) && didDash == false)
+        if (Input.GetMouseButtonDown(0))
         {
             rb.AddForce(0, 0, dashSpeed, ForceMode.Impulse);
             meter = 0;
+           // StartCoroutine(DashState);
         }
     }
 
@@ -148,19 +132,23 @@ public class Movement : MonoBehaviour
     {
         if(meter < 100)
         {
-            didDash = true;
+            //do nothing
         }
         else if(meter == 100)
         {
-            didDash = false;
+            Dashing();
+           
         }
             
     }
-
-    IEnumerator PlaySound(List<AudioClip> soundList)
+        
+    private IEnumerator yeet(float waitTime)
     {
-        AudioSource.PlayClipAtPoint(soundList[Random.Range(0, soundList.Count)], transform.position);
-        yield break;
+        if(didDash == false)
+        {
+            yield return new WaitForSeconds(waitTime);
+            didDash = true;
+        }
     }
 
 }

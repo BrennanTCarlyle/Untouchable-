@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     private Vector3 RightMovement;
     private Rigidbody rb;
     private Vector3 velocity;
+    public GameObject meterHolder;
 
     // Forces that involves the player.
     public float jumpForce;
@@ -45,7 +46,7 @@ public class Movement : MonoBehaviour
 
         didDash = true;
 
-        DashState = yeet(5f);
+        meter = 10;
 
 
         // Players rigidbody. Yep.
@@ -75,7 +76,7 @@ public class Movement : MonoBehaviour
         // Function that adds "weight" to the player when they are coming back down.
         Gravity();
 
-        
+
 
         DashMeter();
     }
@@ -94,8 +95,9 @@ public class Movement : MonoBehaviour
         // Moves the rigidbody towards a position.
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
 
-        
+
     }
+
 
     void Jump()
     {
@@ -129,9 +131,9 @@ public class Movement : MonoBehaviour
         {
             meter += 10;
             meter = Mathf.Clamp(meter, 0, 100);
+            meterHolder.GetComponent<DashBar>().barImage.fillAmount += .1f;
             Debug.Log(meter);
         }
-
 
     }
 
@@ -163,11 +165,11 @@ public class Movement : MonoBehaviour
         else if(meter == 100)
         {
             Dashing();
-           
+
         }
-            
+
     }
-        
+
     private IEnumerator yeet(float waitTime)
     {
         if(didDash == false)

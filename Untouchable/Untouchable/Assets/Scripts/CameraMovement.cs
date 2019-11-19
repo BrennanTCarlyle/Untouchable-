@@ -25,6 +25,7 @@ public class CameraMovement : MonoBehaviour
     private void LookCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void CameraRotation()

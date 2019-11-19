@@ -28,7 +28,7 @@ public class LifeBehavior : MonoBehaviour
         DeathPanel.SetActive(true);
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = Cursor.visible;
+        Cursor.visible = true;
     }
 
     public void LoadSceneName(string givenSceneName)

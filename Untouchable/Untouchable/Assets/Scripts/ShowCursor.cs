@@ -9,7 +9,7 @@ public class ShowCursor : MonoBehaviour
     {
         Time.timeScale = 1;
         Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = Cursor.visible;
+        Cursor.visible = true;
     }
 
 }

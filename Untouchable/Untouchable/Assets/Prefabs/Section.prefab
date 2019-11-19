@@ -54,9 +54,10 @@ MonoBehaviour:
   - {fileID: 281254159218574842}
   - {fileID: 281254158706957596}
   obstacles:
-  - {fileID: 4306586489986503487, guid: 97d46798703871346a5e35f5ef7d764c, type: 3}
+  - {fileID: 2081288511293706522, guid: dae7003bbd351c04994c1517a4688033, type: 3}
   - {fileID: 8234331447878323700, guid: c4563ec323d084788b36b4ec130f3550, type: 3}
   - {fileID: 2081288511293706522, guid: acb60dc7b04118c48a732bfa72273cec, type: 3}
+  - {fileID: 957763694321962051, guid: de303097a0d9c2540a81cb4fbb1ede72, type: 3}
   isRandom: 0
   manualSpawnClockwise: 00000000010000000000000001000000
   randomSpawnChance: 3
@@ -71,8 +72,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 13, y: 13, z: 12}
-  m_Center: {x: 0, y: 0, z: -15.8}
+  m_Size: {x: 13, y: 13, z: 25.04744}
+  m_Center: {x: 0, y: 0, z: -22.323704}
 --- !u!1001 &6138522338225917559
 PrefabInstance:
   m_ObjectHideFlags: 0

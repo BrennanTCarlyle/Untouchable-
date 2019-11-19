@@ -233,12 +233,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cd06b77fc6e4646a22182fe2e0b508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 22
-  jumpForce: 15
+  speed: 24
+  jumpForce: 16
   gravForce: 0.5
   dashSpeed: 10
   grounded: 0
   didDash: 0
+  meter: 0
   landingSound: {fileID: 8300000, guid: c446da9cb3e515649b36c3510eaff965, type: 3}
   landingSound2: {fileID: 8300000, guid: bb695c1261447fc4b8c2fdcf2a42c188, type: 3}
   landingSound3: {fileID: 8300000, guid: c3bf8cdef315db945939ed09990a3229, type: 3}

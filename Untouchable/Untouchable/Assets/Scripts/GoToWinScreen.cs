@@ -1,18 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GoToWinScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // If player collides with the platform, they are allowed to jump again.
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("EndScene");
+        }
     }
 }

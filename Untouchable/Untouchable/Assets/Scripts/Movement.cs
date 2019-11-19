@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     private Vector3 RightMovement;
     private Rigidbody rb;
     private Vector3 velocity;
-   
+    public GameObject meterHolder;
 
     // Forces that involves the player.
     public float jumpForce;
@@ -20,7 +20,6 @@ public class Movement : MonoBehaviour
     public float dashSpeed;
     public bool grounded;
     public bool didDash;
-   
 
     public float meter;
 
@@ -35,11 +34,13 @@ public class Movement : MonoBehaviour
 
         didDash = true;
 
-        DashState = yeet(5f);
+        meter = 10;
 
 
         // Players rigidbody. Yep.
         rb = GetComponent<Rigidbody>();
+
+        //dashMeter = GetComponent<DashBar>();
         
     }
 
@@ -78,6 +79,7 @@ public class Movement : MonoBehaviour
         
     }
 
+
     void Jump()
     {
         // Adds a force when the player presses space, and they are on the platform.
@@ -103,9 +105,9 @@ public class Movement : MonoBehaviour
         {
             meter += 10;
             meter = Mathf.Clamp(meter, 0, 100);
+            meterHolder.GetComponent<DashBar>().barImage.fillAmount += .1f;
             Debug.Log(meter);
         }
-
 
     }
 

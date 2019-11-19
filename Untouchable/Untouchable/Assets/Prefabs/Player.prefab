@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 24
   meterHolder: {fileID: 0}
-  jumpForce: 16
+  jumpForce: 19
   gravForce: 0.5
   dashSpeed: 30
   grounded: 0

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: be434b9639bf446369a6194e16737e96
+  - enabled: 1
+    path: Assets/Scenes/SmolCutscene.unity
+    guid: 8fb8c62b511db92439880ce05aacd368
   m_configObjects: {}

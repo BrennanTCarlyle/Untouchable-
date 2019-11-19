@@ -46,7 +46,7 @@ public class Movement : MonoBehaviour
 
         didDash = true;
 
-        meter = 10;
+        
 
 
         // Players rigidbody. Yep.
@@ -152,7 +152,7 @@ public class Movement : MonoBehaviour
         {
             rb.AddForce(0, 0, dashSpeed, ForceMode.Impulse);
             meter = 0;
-           // StartCoroutine(DashState);
+            meterHolder.GetComponent<DashBar>().barImage.fillAmount = 0;
         }
     }
 
@@ -170,14 +170,6 @@ public class Movement : MonoBehaviour
 
     }
 
-    private IEnumerator yeet(float waitTime)
-    {
-        if(didDash == false)
-        {
-            yield return new WaitForSeconds(waitTime);
-            didDash = true;
-        }
-    }
 
     IEnumerator PlaySound(List<AudioClip> soundList)
     {

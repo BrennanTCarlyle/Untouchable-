@@ -68,7 +68,7 @@ public class Movement : MonoBehaviour
     {
         // Updates when the Player is on the horizontal/vertical axis.
         horizInput = Input.GetAxis("Horizontal");
-        vertInput = Input.GetAxis("Vertical");
+        //vertInput = Input.GetAxis("Vertical");
 
         // Function that allows player to jump.
         Jump();
@@ -84,10 +84,10 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         // Allows the player to move forward and backwards.
-        ForwardMovement = transform.forward * vertInput;
+        ForwardMovement = transform.forward * Time.deltaTime;
 
         // Allows the player to move left and right.
-        RightMovement = transform.right * horizInput;
+       // RightMovement = transform.right * horizInput;
 
         // Allows the player to move around, and the speed at which they are allowd to move.
         velocity = (RightMovement + ForwardMovement).normalized * speed;

@@ -4906,8 +4906,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e1ab29bfdab3947a8bce5d78973051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSpeed: 20
-  maxSpeed: 20
+  minSpeed: 10
+  maxSpeed: 10
   killTimer: 5
 --- !u!82 &2335553639917630197
 AudioSource:

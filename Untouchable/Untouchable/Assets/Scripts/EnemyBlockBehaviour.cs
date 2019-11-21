@@ -5,18 +5,20 @@ using UnityEngine;
 public class EnemyBlockBehaviour : MonoBehaviour
 {
     [Tooltip("Movement speed")]
-    public int minSpeed;
-    public int maxSpeed;
-
-    private int speed;
+    public int speed;
 
     public int killTimer = 3;
+
+    [Header("Refs to all moving blocks")]
+    public List<GameObject> movingBlocks;
 
     // Start is called before the first frame update
     void Start()
     {
         Invoke("killSelf", killTimer);
-        speed = Random.Range(minSpeed, maxSpeed);
+
+        // turn off one of three blocks
+        movingBlocks[Random.Range(0, 3)].SetActive(false);
     }
 
     // Update is called once per frame

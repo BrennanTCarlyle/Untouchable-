@@ -102,7 +102,6 @@ public class Movement : MonoBehaviour
     {
         yield return new WaitForSeconds(MainCamera.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0).Length + 1);
         canMove = true;
-        GameObject.Find("KillBox").GetComponent<ObstacleMovement>().started = true;
     }
 
     void Jump()

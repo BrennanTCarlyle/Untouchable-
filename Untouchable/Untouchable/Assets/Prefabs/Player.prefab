@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7466593639561076014}
   - component: {fileID: 7466593639561076009}
   - component: {fileID: 739533961}
+  - component: {fileID: 2019759286}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -125,6 +126,25 @@ AudioReverbZone:
   m_Density: 100
   m_LFReference: 250
   m_RoomLF: 0
+--- !u!95 &2019759286
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466593639561076013}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ca0855d6a8ba44e2a8f5c5cb636687c0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7466593640243850270
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,13 +253,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cd06b77fc6e4646a22182fe2e0b508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 24
+  speed: 25
   meterHolder: {fileID: 0}
-  jumpForce: 19
+  MainCamera: {fileID: 7466593639561076013}
+  jumpForce: 18
   gravForce: 0.5
   dashSpeed: 30
   grounded: 0
   didDash: 0
+  canMove: 0
   meter: 0
   landingSound: {fileID: 8300000, guid: c446da9cb3e515649b36c3510eaff965, type: 3}
   landingSound2: {fileID: 8300000, guid: bb695c1261447fc4b8c2fdcf2a42c188, type: 3}

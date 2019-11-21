@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObstacleMovement : MonoBehaviour
 {
     public int speed;
+    public bool started;
 
     void Awake()
     {
@@ -20,6 +21,9 @@ public class ObstacleMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        if (started)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        }
     }
 }

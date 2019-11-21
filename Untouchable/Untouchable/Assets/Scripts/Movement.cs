@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
     private Rigidbody rb;
     private Vector3 velocity;
     public GameObject meterHolder;
+    public GameObject MainCamera;
 
     // Forces that involves the player.
     public float jumpForce;
@@ -20,6 +21,7 @@ public class Movement : MonoBehaviour
     public float dashSpeed;
     public bool grounded;
     public bool didDash;
+    public bool canMove;
 
     public float meter;
 
@@ -47,7 +49,7 @@ public class Movement : MonoBehaviour
         didDash = true;
 
         
-
+        StartCoroutine(WaitToRun());
 
         // Players rigidbody. Yep.
         rb = GetComponent<Rigidbody>();
@@ -72,32 +74,36 @@ public class Movement : MonoBehaviour
 
         // Function that allows player to jump.
         Jump();
-
         // Function that adds "weight" to the player when they are coming back down.
         Gravity();
-
-
-
         DashMeter();
     }
 
     private void FixedUpdate()
     {
-        // Allows the player to move forward and backwards.
-        ForwardMovement = transform.forward * Time.deltaTime;
+        if (canMove)
+        {
+            // Allows the player to move forward and backwards.
+            ForwardMovement = transform.forward * Time.deltaTime;
 
-        // Allows the player to move left and right.
-       // RightMovement = transform.right * horizInput;
+            // Allows the player to move left and right.
+            // RightMovement = transform.right * horizInput;
 
-        // Allows the player to move around, and the speed at which they are allowd to move.
-        velocity = (RightMovement + ForwardMovement).normalized * speed;
+            // Allows the player to move around, and the speed at which they are allowd to move.
+            velocity = (RightMovement + ForwardMovement).normalized * speed;
 
-        // Moves the rigidbody towards a position.
-        rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
-
+            // Moves the rigidbody towards a position.
+            rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+        }
 
     }
 
+    private IEnumerator WaitToRun()
+    {
+        yield return new WaitForSeconds(MainCamera.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0).Length + 1);
+        canMove = true;
+        GameObject.Find("KillBox").GetComponent<ObstacleMovement>().started = true;
+    }
 
     void Jump()
     {

@@ -19,7 +19,11 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CameraRotation();
+        if (gameObject.GetComponentInParent<Movement>().canMove)
+        {
+            CameraRotation();
+            GetComponent<Animator>().enabled = false;
+        }
     }
 
     private void LookCursor()

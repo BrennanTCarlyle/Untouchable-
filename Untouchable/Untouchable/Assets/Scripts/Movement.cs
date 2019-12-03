@@ -187,6 +187,8 @@ public class Movement : MonoBehaviour
     IEnumerator slowDown()
     {
         Time.timeScale = 0.5f;
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(0.8f);
+        Time.timeScale = 1.0f;
+
     }
 }

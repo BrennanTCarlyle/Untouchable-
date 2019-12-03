@@ -48,6 +48,7 @@ public class Movement : MonoBehaviour
 
         didDash = true;
 
+        meter = 90;
         
         StartCoroutine(WaitToRun());
 
@@ -87,7 +88,7 @@ public class Movement : MonoBehaviour
             ForwardMovement = transform.forward * 1;
 
             // Allows the player to move left and right.
-             RightMovement = transform.right * horizInput;
+            RightMovement = transform.right * horizInput;
 
             // Allows the player to move around, and the speed at which they are allowd to move.
             velocity = (RightMovement + ForwardMovement).normalized * speed;
@@ -155,9 +156,11 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            rb.AddForce(0, 0, dashSpeed, ForceMode.Impulse);
+            StartCoroutine(slowDown());
+            //rb.AddForce(0, 0, dashSpeed, ForceMode.Impulse);
             meter = 0;
             meterHolder.GetComponent<DashBar>().barImage.fillAmount = 0;
+            
         }
     }
 
@@ -170,7 +173,6 @@ public class Movement : MonoBehaviour
         else if(meter == 100)
         {
             Dashing();
-
         }
 
     }
@@ -180,5 +182,11 @@ public class Movement : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(soundList[Random.Range(0, soundList.Count)], transform.position);
         yield break;
+    }
+
+    IEnumerator slowDown()
+    {
+        Time.timeScale = 0.5f;
+        yield return new WaitForSeconds(2.5f);
     }
 }

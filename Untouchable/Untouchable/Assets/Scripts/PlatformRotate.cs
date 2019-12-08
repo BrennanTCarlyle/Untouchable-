@@ -17,12 +17,12 @@ public class PlatformRotate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("SwitchRight"))
+        if (Input.GetMouseButtonDown(1))
         {
             if(!isSwitching)
                 StartCoroutine(SwitchPlane(true));
         }
-        if (Input.GetButtonDown("SwitchLeft"))
+        if (Input.GetMouseButtonDown(0))
         {
             if(!isSwitching)
                 StartCoroutine(SwitchPlane(false));

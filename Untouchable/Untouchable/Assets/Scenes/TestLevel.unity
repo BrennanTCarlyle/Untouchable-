@@ -8531,7 +8531,7 @@ PrefabInstance:
     - target: {fileID: 7466593640243850264, guid: 92a5b3e77863b58499d2e8f62ff759a0,
         type: 3}
       propertyPath: jumpForce
-      value: 22
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2006365649, guid: 92a5b3e77863b58499d2e8f62ff759a0, type: 3}
       propertyPath: DeathPanel

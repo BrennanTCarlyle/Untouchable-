@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
     public float jumpForce;
     public float gravForce;
     public float dashSpeed;
+    public float iAmSpeed;
     public bool grounded;
     public bool didDash;
     public bool canMove;
@@ -26,6 +27,7 @@ public class Movement : MonoBehaviour
     public float meter;
 
     private IEnumerator DashState;
+    private float fixedDeltaTime;
 
     [Header("Jump audio settings")]
     public AudioClip landingSound;
@@ -40,6 +42,7 @@ public class Movement : MonoBehaviour
     public AudioClip bashSound3;
     private List<AudioClip> bashSoundsList = new List<AudioClip>();
 
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -48,9 +51,15 @@ public class Movement : MonoBehaviour
 
         didDash = true;
 
+        iAmSpeed = 1;
+
         meter = 90;
         
         StartCoroutine(WaitToRun());
+
+        //Time.fixedDeltaTime = this.fixedDeltaTime;
+
+        this.fixedDeltaTime = Time.fixedDeltaTime;
 
         // Players rigidbody. Yep.
         rb = GetComponent<Rigidbody>();
@@ -77,6 +86,7 @@ public class Movement : MonoBehaviour
         Jump();
         // Function that adds "weight" to the player when they are coming back down.
         Gravity();
+
         DashMeter();
     }
 
@@ -91,7 +101,7 @@ public class Movement : MonoBehaviour
             RightMovement = transform.right * horizInput;
 
             // Allows the player to move around, and the speed at which they are allowd to move.
-            velocity = (RightMovement + ForwardMovement).normalized * speed;
+            velocity = (RightMovement + ForwardMovement).normalized * speed * iAmSpeed;
 
             // Moves the rigidbody towards a position.
             rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
@@ -154,7 +164,7 @@ public class Movement : MonoBehaviour
 
     void Dashing()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             StartCoroutine(slowDown());
             //rb.AddForce(0, 0, dashSpeed, ForceMode.Impulse);
@@ -186,7 +196,20 @@ public class Movement : MonoBehaviour
 
     IEnumerator slowDown()
     {
+        float newJumpForce = 0;
         Time.timeScale = 0.5f;
-        yield return new WaitForSeconds(2.5f);
+        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+
+        newJumpForce = jumpForce * 1.5f;
+        jumpForce = newJumpForce;
+
+        iAmSpeed = 1.5f;
+
+        yield return new WaitForSeconds(1f);
+       
+        jumpForce = 22;
+        iAmSpeed = 1;
+        Time.timeScale = 1.0f;
+        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PauseMenuBehavior : MonoBehaviour
+public class PauseMenuBehavior : MainMenuBehavior
 {
     // Bool to check if the game is paused 
     public static bool isPaused;

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7769681696977167033}
   - component: {fileID: 4479970094948513052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger
   m_TagString: NearMiss
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 596743773207626194}
   - component: {fileID: 286627885952341686}
   - component: {fileID: 7247222022023522905}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MovingCube (1)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 188739654554518618}
   - component: {fileID: 5566994008408891361}
   - component: {fileID: 5140150171961902525}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MovingCube (2)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 8876439846348990270}
   - component: {fileID: 5234407752786800088}
   - component: {fileID: 7454141773111573786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MovingCubes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -425,7 +425,7 @@ GameObject:
   - component: {fileID: 5922151572241590681}
   - component: {fileID: 5922151572241590680}
   - component: {fileID: 8501249930345869515}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MovingCube
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -530,7 +530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8234331447878323704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MovingObstacle
   m_TagString: Obstacle
   m_Icon: {fileID: 0}

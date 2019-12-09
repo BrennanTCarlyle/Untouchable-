@@ -10291,6 +10291,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7466593640243850270, guid: 92a5b3e77863b58499d2e8f62ff759a0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7466593640243850260, guid: 92a5b3e77863b58499d2e8f62ff759a0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10346,6 +10351,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2006365649, guid: 92a5b3e77863b58499d2e8f62ff759a0, type: 3}
+      propertyPath: DeathPanel
+      value: 
+      objectReference: {fileID: 1171617618}
     - target: {fileID: 7466593640243850264, guid: 92a5b3e77863b58499d2e8f62ff759a0,
         type: 3}
       propertyPath: meterHolder
@@ -10356,10 +10365,11 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 18
       objectReference: {fileID: 0}
-    - target: {fileID: 2006365649, guid: 92a5b3e77863b58499d2e8f62ff759a0, type: 3}
-      propertyPath: DeathPanel
-      value: 
-      objectReference: {fileID: 1171617618}
+    - target: {fileID: 7466593639561076013, guid: 92a5b3e77863b58499d2e8f62ff759a0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92a5b3e77863b58499d2e8f62ff759a0, type: 3}
 --- !u!114 &1462374866 stripped

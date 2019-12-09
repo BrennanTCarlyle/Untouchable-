@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2081288511293706518}
   - component: {fileID: 2081288511293706519}
   - component: {fileID: 2081288511293706520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 5 pillar platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6768978576626329667}
   - component: {fileID: 5033851299625379914}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trigger
   m_TagString: NearMiss
   m_Icon: {fileID: 0}
@@ -153,6 +153,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PillarHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 43803996919519661, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 43803996919519660, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
         type: 3}
@@ -209,6 +214,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 43803996240396747, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 43803995856127751, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b, type: 3}
 --- !u!4 &2081288510919920084 stripped
@@ -228,6 +243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PillarHolder (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 43803996919519661, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 43803996919519660, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
         type: 3}
@@ -284,6 +304,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 43803996240396747, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 43803995856127751, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b, type: 3}
 --- !u!4 &2051855133759752774 stripped
@@ -303,6 +333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PillarHolder (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 43803996919519661, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 43803996919519660, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
         type: 3}
@@ -359,6 +394,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 43803996240396747, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 43803995856127751, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b, type: 3}
 --- !u!4 &2051855131731369566 stripped
@@ -378,6 +423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PillarHolder (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 43803996919519661, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 43803996919519660, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
         type: 3}
@@ -434,6 +484,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 43803996240396747, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 43803995856127751, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b, type: 3}
 --- !u!4 &2051855131749141805 stripped
@@ -453,6 +513,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PillarHolder (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 43803996919519661, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 43803996919519660, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
         type: 3}
@@ -508,6 +573,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 43803996240396747, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 43803995856127751, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37c9f9bdc93ee1e48abad0ce155a0b3b, type: 3}

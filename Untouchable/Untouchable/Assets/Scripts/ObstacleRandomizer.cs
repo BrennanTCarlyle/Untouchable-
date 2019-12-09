@@ -6,10 +6,16 @@ public class ObstacleRandomizer : MonoBehaviour
 {
     public GameObject[] obstaclePlatforms;
     public GameObject[] obstacles;
-    public bool isRandom;
+    private int[] obstacleTotal;
+    public int randomSpawnLimit;
+    public bool manualSpawning;
     public int[] manualSpawnClockwise;
-    public int randomSpawnChance;
     private bool alreadyTriggered;
+
+    private void Start()
+    {
+        obstacleTotal = new int[obstacles.Length];
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,22 +24,33 @@ public class ObstacleRandomizer : MonoBehaviour
             if(other.gameObject.CompareTag("Player"))
             {
                 alreadyTriggered = true;
-                if (isRandom)
-                {
-                    for (int i = 0; i < randomSpawnChance; i++)
-                    {
-                        obstaclePlatforms[i].GetComponent<SpawnPoint>().SpawnObject
-                            (gameObject, obstacles[Random.Range(0,obstacles.Length - 1)]);
-                    }
-                }
-                else
+                if (manualSpawning)
                 {
                     for (int i = 0; i < manualSpawnClockwise.Length; i++)
                     {
                         obstaclePlatforms[i].GetComponent<SpawnPoint>().SpawnObject
                             (gameObject, obstacles[manualSpawnClockwise[i]]);
                     }
-                }                
+                }
+                else
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        int chosenNumber = Random.Range(0,obstacles.Length);
+                        GameObject chooseObstacle = obstacles[chosenNumber];
+
+                        if (obstacleTotal[chosenNumber] >= randomSpawnLimit)
+                        {
+                            while(obstacleTotal[chosenNumber] >= randomSpawnLimit)
+                            {
+                                chosenNumber = Random.Range(0,obstacles.Length);
+                                chooseObstacle = obstacles[chosenNumber];
+                            }
+                        }
+                        obstacleTotal[chosenNumber]++;
+                        obstaclePlatforms[i].GetComponent<SpawnPoint>().SpawnObject(gameObject, chooseObstacle);
+                    }
+                }
             }
         }
     }

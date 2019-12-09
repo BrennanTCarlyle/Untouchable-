@@ -10,6 +10,6 @@ public class SetParentColor : MonoBehaviour
     void Start()
     {
         Debug.Log(gameObject.transform.parent.parent);
-        gameObject.transform.parent.parent.GetComponent<MeshRenderer>().materials[0] = mat;
+        gameObject.transform.parent.parent.GetComponent<MeshRenderer>().material = mat;
     }
 }

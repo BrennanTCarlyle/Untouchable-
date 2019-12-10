@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
@@ -14,12 +15,20 @@ public class Movement : MonoBehaviour
     private Vector3 velocity;
     public GameObject meterHolder;
     public GameObject MainCamera;
+    public GameObject InvinciblePanel;
+    public PauseMenuBehavior Pause;
+
+    public Text timerText;
+    private float secondsCount;
+    private int minuteCount;
+    private int hourCount;
 
     // Forces that involves the player.
     public float jumpForce;
     public float gravForce;
     public float dashSpeed;
     public float iAmSpeed;
+    public float waitTime = 4.25f;
     public bool grounded;
     public bool didDash;
     public bool canMove;
@@ -53,7 +62,7 @@ public class Movement : MonoBehaviour
 
         iAmSpeed = 1;
 
-        meter = 90;
+        meter = 0;
         
         StartCoroutine(WaitToRun());
 
@@ -88,6 +97,9 @@ public class Movement : MonoBehaviour
         Gravity();
 
         DashMeter();
+
+        
+
     }
 
     private void FixedUpdate()
@@ -170,8 +182,10 @@ public class Movement : MonoBehaviour
             //rb.AddForce(0, 0, dashSpeed, ForceMode.Impulse);
             meter = 0;
             meterHolder.GetComponent<DashBar>().barImage.fillAmount = 0;
-            
+            InvinciblePanel.SetActive(true);
+            StartCoroutine(UpdateTimerUI());
         }
+      
     }
 
     void DashMeter()
@@ -198,9 +212,26 @@ public class Movement : MonoBehaviour
     {
         gameObject.layer = 10;
 
-        yield return new WaitForSeconds(4.25f);
+        yield return new WaitForSeconds(waitTime);
+        InvinciblePanel.SetActive(false);
 
         gameObject.layer = 9;
+    }
+
+    
+    
+    //call this on update
+    public IEnumerator UpdateTimerUI()
+    {        
+        //set timer UI
+        secondsCount = waitTime;
+
+        for (int i = 0; i < waitTime; i++)
+        {
+            timerText.text = (int)secondsCount + "s";
+            yield return new WaitForSeconds(1);
+            secondsCount--;
+        }
     }
 
 

@@ -66,6 +66,9 @@ public class PauseMenuBehavior : MainMenuBehavior
         // The pause menu is not active 
         pauseMenu.SetActive(false);
 
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
         // Timescale is set to 1, meaning objects can move in the game 
         Time.timeScale = 1;
     }

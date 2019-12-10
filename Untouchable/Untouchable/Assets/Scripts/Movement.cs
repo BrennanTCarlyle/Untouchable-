@@ -54,7 +54,7 @@ public class Movement : MonoBehaviour
 
         iAmSpeed = 1;
 
-        meter = 90;
+        meter = 0;
         
         StartCoroutine(WaitToRun());
 

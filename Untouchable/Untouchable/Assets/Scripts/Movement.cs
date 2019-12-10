@@ -167,6 +167,7 @@ public class Movement : MonoBehaviour
         if(collision.gameObject.CompareTag("ResetVelocity"))
         {
             rb.velocity = Vector3.zero;
+            Debug.Log("set velocity");
         }
     }
 
@@ -178,6 +179,11 @@ public class Movement : MonoBehaviour
             meter = Mathf.Clamp(meter, 0, 100);
             meterHolder.GetComponent<DashBar>().barImage.fillAmount += .1f;
             Debug.Log(meter);
+        }
+        if(other.gameObject.CompareTag("ResetVelocity"))
+        {
+            rb.velocity = Vector3.zero;
+            Debug.Log("set velocity");
         }
 
     }

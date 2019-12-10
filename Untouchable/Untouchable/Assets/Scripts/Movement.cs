@@ -163,6 +163,11 @@ public class Movement : MonoBehaviour
         {
             StartCoroutine(PlaySound(bashSoundsList));
         }
+
+        if(collision.gameObject.CompareTag("ResetVelocity"))
+        {
+            rb.velocity = Vector3.zero;
+        }
     }
 
     private void OnTriggerExit(Collider other)

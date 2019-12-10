@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 320088949664111896}
   - component: {fileID: 320088949664111897}
   - component: {fileID: 320088949664111898}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SubPlatform
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 320088950143143428}
   - component: {fileID: 320088950143143547}
   - component: {fileID: 2075484526668281264}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LaserFloorObstacle
   m_TagString: KillBox
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3376981605526569334}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LASERS (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3768847307615641322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LASERS (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2281415288090337531}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LASERS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8637057418581332361}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LaserHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 5470903860510186042}
   - component: {fileID: 7300759791485793320}
   - component: {fileID: 5099397576001091067}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2140078828508950797}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LASERS (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 5577021659300813901}
   - component: {fileID: 2238044479808935726}
   - component: {fileID: 2553726149021119217}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 8631123205513769923}
   - component: {fileID: 9045242737213024016}
   - component: {fileID: 334826106217483232}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 8529611125391752527}
   - component: {fileID: 7789593825554488881}
   - component: {fileID: 4085436447918078737}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}

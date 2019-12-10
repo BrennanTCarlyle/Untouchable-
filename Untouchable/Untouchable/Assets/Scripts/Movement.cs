@@ -57,9 +57,9 @@ public class Movement : MonoBehaviour
         
         StartCoroutine(WaitToRun());
 
-        //Time.fixedDeltaTime = this.fixedDeltaTime;
+        
 
-        this.fixedDeltaTime = Time.fixedDeltaTime;
+        
 
         // Players rigidbody. Yep.
         rb = GetComponent<Rigidbody>();
@@ -166,7 +166,7 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            StartCoroutine(slowDown());
+            StartCoroutine(Invincible());
             //rb.AddForce(0, 0, dashSpeed, ForceMode.Impulse);
             meter = 0;
             meterHolder.GetComponent<DashBar>().barImage.fillAmount = 0;
@@ -194,7 +194,25 @@ public class Movement : MonoBehaviour
         yield break;
     }
 
-    IEnumerator slowDown()
+    IEnumerator Invincible()
+    {
+        gameObject.layer = 10;
+
+        yield return new WaitForSeconds(4.25f);
+
+        gameObject.layer = 9;
+    }
+
+
+
+
+
+
+
+
+
+    // Code Graveyard
+    /*IEnumerator slowDown()
     {
         float newJumpForce = 0;
         Time.timeScale = 0.5f;
@@ -211,5 +229,5 @@ public class Movement : MonoBehaviour
         iAmSpeed = 1;
         Time.timeScale = 1.0f;
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
-    }
+    }*/
 }

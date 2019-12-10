@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour
     public float gravForce;
     public float dashSpeed;
     public float iAmSpeed;
+    public float waitTime = 4.25f;
     public bool grounded;
     public bool didDash;
     public bool canMove;
@@ -201,7 +202,7 @@ public class Movement : MonoBehaviour
     {
         gameObject.layer = 10;
 
-        yield return new WaitForSeconds(4.25f);
+        yield return new WaitForSeconds(waitTime);
         InvinciblePanel.SetActive(false);
 
         gameObject.layer = 9;

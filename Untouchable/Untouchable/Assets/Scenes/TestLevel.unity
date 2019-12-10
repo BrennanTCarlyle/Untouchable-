@@ -10489,6 +10489,11 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7466593640243850264, guid: 92a5b3e77863b58499d2e8f62ff759a0,
+        type: 3}
+      propertyPath: InvinciblePanel
+      value: 
+      objectReference: {fileID: 1802571802}
     - target: {fileID: 2006365649, guid: 92a5b3e77863b58499d2e8f62ff759a0, type: 3}
       propertyPath: DeathPanel
       value: 
@@ -13647,7 +13652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9604077, b: 0, a: 0.27450982}
+  m_Color: {r: 1, g: 0.9607843, b: 0, a: 0.1882353}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

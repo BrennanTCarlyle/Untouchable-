@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     private Vector3 velocity;
     public GameObject meterHolder;
     public GameObject MainCamera;
+    public GameObject InvinciblePanel;
 
     // Forces that involves the player.
     public float jumpForce;
@@ -170,8 +171,10 @@ public class Movement : MonoBehaviour
             //rb.AddForce(0, 0, dashSpeed, ForceMode.Impulse);
             meter = 0;
             meterHolder.GetComponent<DashBar>().barImage.fillAmount = 0;
+            InvinciblePanel.SetActive(true);
             
         }
+      
     }
 
     void DashMeter()
@@ -199,6 +202,7 @@ public class Movement : MonoBehaviour
         gameObject.layer = 10;
 
         yield return new WaitForSeconds(4.25f);
+        InvinciblePanel.SetActive(false);
 
         gameObject.layer = 9;
     }

@@ -22,6 +22,7 @@ public class Movement : MonoBehaviour
     private float secondsCount;
     private int minuteCount;
     private int hourCount;
+    private bool canResetJump = true;
 
     // Forces that involves the player.
     public float jumpForce;
@@ -132,9 +133,17 @@ public class Movement : MonoBehaviour
         // Adds a force when the player presses space, and they are on the platform.
         if (Input.GetKeyDown("space") && grounded == true)
         {
+            StartCoroutine(AllowJumpReset());
             rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
             grounded = false;
         }
+    }
+
+    private IEnumerator AllowJumpReset()
+    {
+        canResetJump = false;
+        yield return new WaitForSeconds(0.2f);
+        canResetJump = true;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -142,7 +151,10 @@ public class Movement : MonoBehaviour
         // If player collides with the platform, they are allowed to jump again.
         if (collision.gameObject.CompareTag("Platform"))
         {
-            grounded = true;
+            if (canResetJump)
+            {
+                grounded = true;
+            }
             StartCoroutine(PlaySound(landingSoundsList));
         }
 

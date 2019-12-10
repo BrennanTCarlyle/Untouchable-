@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class Movement : MonoBehaviour
     public GameObject meterHolder;
     public GameObject MainCamera;
     public GameObject InvinciblePanel;
+    public PauseMenuBehavior Pause;
+
+    public Text timerText;
+    private float secondsCount;
+    private int minuteCount;
+    private int hourCount;
 
     // Forces that involves the player.
     public float jumpForce;
@@ -90,6 +97,9 @@ public class Movement : MonoBehaviour
         Gravity();
 
         DashMeter();
+
+        
+
     }
 
     private void FixedUpdate()
@@ -173,7 +183,7 @@ public class Movement : MonoBehaviour
             meter = 0;
             meterHolder.GetComponent<DashBar>().barImage.fillAmount = 0;
             InvinciblePanel.SetActive(true);
-            
+            StartCoroutine(UpdateTimerUI());
         }
       
     }
@@ -206,6 +216,22 @@ public class Movement : MonoBehaviour
         InvinciblePanel.SetActive(false);
 
         gameObject.layer = 9;
+    }
+
+    
+    
+    //call this on update
+    public IEnumerator UpdateTimerUI()
+    {        
+        //set timer UI
+        secondsCount = waitTime;
+
+        for (int i = 0; i < waitTime; i++)
+        {
+            timerText.text = (int)secondsCount + "s";
+            yield return new WaitForSeconds(1);
+            secondsCount--;
+        }
     }
 
 

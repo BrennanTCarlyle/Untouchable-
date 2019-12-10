@@ -23,7 +23,7 @@ public class EnemyBlockBehaviour : MonoBehaviour
         Invoke("killSelf", killTimer);
 
         // turn off one of three blocks
-        movingBlocks[Random.Range(0, 3)].SetActive(false);
+        movingBlocks[Random.Range(0, 2)].SetActive(false);
     }
 
     // Update is called once per frame

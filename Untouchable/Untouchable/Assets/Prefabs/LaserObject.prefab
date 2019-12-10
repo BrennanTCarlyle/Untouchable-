@@ -23,9 +23,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2388048389213534653}
+  - component: {fileID: 1364854412693045376}
   m_Layer: 8
   m_Name: LaserObject
-  m_TagString: Untagged
+  m_TagString: NearMiss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,6 +47,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1364854412693045376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6677106447324739795}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.6066265, y: 14.378801, z: 1}
+  m_Center: {x: -1.3283293, y: 6.6894007, z: 0}
 --- !u!136 &2517105279449210861
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -67,6 +81,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2388048389213534653}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 323ff9aa637d0af48aa74d38f0977017,
+        type: 3}
+      propertyPath: m_Name
+      value: laser
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 323ff9aa637d0af48aa74d38f0977017,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 323ff9aa637d0af48aa74d38f0977017,
+        type: 3}
+      propertyPath: m_TagString
+      value: KillBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 323ff9aa637d0af48aa74d38f0977017,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 323ff9aa637d0af48aa74d38f0977017,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -137,26 +171,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.26
       objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 323ff9aa637d0af48aa74d38f0977017,
-        type: 3}
-      propertyPath: m_Name
-      value: laser
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 323ff9aa637d0af48aa74d38f0977017,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2534866581884222612, guid: 323ff9aa637d0af48aa74d38f0977017,
-        type: 3}
-      propertyPath: m_TagString
-      value: KillBox
-      objectReference: {fileID: 0}
-    - target: {fileID: 2534866581884222612, guid: 323ff9aa637d0af48aa74d38f0977017,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 323ff9aa637d0af48aa74d38f0977017, type: 3}
 --- !u!4 &5398174887878098895 stripped
@@ -178,6 +192,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2388048389213534653}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 323ff9aa637d0af48aa74d38f0977017,
+        type: 3}
+      propertyPath: m_Name
+      value: laser (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 323ff9aa637d0af48aa74d38f0977017,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 323ff9aa637d0af48aa74d38f0977017,
+        type: 3}
+      propertyPath: m_TagString
+      value: KillBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534866581884222612, guid: 323ff9aa637d0af48aa74d38f0977017,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 323ff9aa637d0af48aa74d38f0977017,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -247,26 +281,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.26
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 323ff9aa637d0af48aa74d38f0977017,
-        type: 3}
-      propertyPath: m_Name
-      value: laser (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 323ff9aa637d0af48aa74d38f0977017,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2534866581884222612, guid: 323ff9aa637d0af48aa74d38f0977017,
-        type: 3}
-      propertyPath: m_TagString
-      value: KillBox
-      objectReference: {fileID: 0}
-    - target: {fileID: 2534866581884222612, guid: 323ff9aa637d0af48aa74d38f0977017,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 323ff9aa637d0af48aa74d38f0977017, type: 3}

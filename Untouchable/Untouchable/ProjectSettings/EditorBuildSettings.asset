@@ -12,18 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/HowToPlay.unity
     guid: e120b4006dc52104babb1b8d761b70fe
   - enabled: 1
-    path: Assets/Scenes/TestLevel.unity
-    guid: afc71b8bf01499a43804c6136ead1e7b
-  - enabled: 1
-    path: Assets/Scenes/MainScene.unity
-    guid: be434b9639bf446369a6194e16737e96
-  - enabled: 1
     path: Assets/Scenes/SmolCutscene.unity
     guid: 8fb8c62b511db92439880ce05aacd368
   - enabled: 1
-    path: Assets/Scenes/EndScene.unity
-    guid: 84f8e8f493b7c3b4d9a3b57d3b62a305
-  - enabled: 1
     path: Assets/Scenes/FinalLevel.unity
     guid: a33cf5e03eceacc428e5081dddf95f72
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 84f8e8f493b7c3b4d9a3b57d3b62a305
   m_configObjects: {}

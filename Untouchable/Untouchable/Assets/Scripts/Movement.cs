@@ -38,6 +38,7 @@ public class Movement : MonoBehaviour
 
     private IEnumerator DashState;
     private float fixedDeltaTime;
+    public AudioClip untouchableSound;
 
     [Header("Jump audio settings")]
     public AudioClip landingSound;
@@ -202,6 +203,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             StartCoroutine(Invincible());
+            GetComponent<AudioSource>().PlayOneShot(untouchableSound, 1);
             //rb.AddForce(0, 0, dashSpeed, ForceMode.Impulse);
             meter = 0;
             meterHolder.GetComponent<DashBar>().barImage.fillAmount = 0;
@@ -251,7 +253,7 @@ public class Movement : MonoBehaviour
 
         for (int i = 0; i < waitTime; i++)
         {
-            timerText.text = (int)secondsCount + "s";
+            timerText.text = "Invincible for " + (int)secondsCount + "s";
             yield return new WaitForSeconds(1);
             secondsCount--;
         }

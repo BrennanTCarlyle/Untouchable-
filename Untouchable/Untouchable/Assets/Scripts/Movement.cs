@@ -95,12 +95,8 @@ public class Movement : MonoBehaviour
 
         // Function that allows player to jump.
         Jump();
-        // Function that adds "weight" to the player when they are coming back down.
-        Gravity();
 
         DashMeter();
-
-        
 
     }
 
@@ -120,6 +116,9 @@ public class Movement : MonoBehaviour
             // Moves the rigidbody towards a position.
             rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
         }
+
+        // Function that adds "weight" to the player when they are coming back down.
+        Gravity();
 
     }
 
@@ -168,7 +167,6 @@ public class Movement : MonoBehaviour
         if(collision.gameObject.CompareTag("ResetVelocity"))
         {
             rb.velocity = Vector3.zero;
-            Debug.Log("set velocity");
         }
     }
 
@@ -179,12 +177,10 @@ public class Movement : MonoBehaviour
             meter += 10;
             meter = Mathf.Clamp(meter, 0, 100);
             meterHolder.GetComponent<DashBar>().barImage.fillAmount += .1f;
-            Debug.Log(meter);
         }
         if(other.gameObject.CompareTag("ResetVelocity"))
         {
             rb.velocity = Vector3.zero;
-            Debug.Log("set velocity");
         }
 
     }
@@ -192,7 +188,7 @@ public class Movement : MonoBehaviour
     void Gravity()
     {
         // When the player is in the air, it adds a downward force to add "weight" to the player.
-        if(grounded == false)
+        if (grounded == false)
         {
             rb.AddForce(0, -gravForce, 0, ForceMode.Impulse);
         }
@@ -223,7 +219,6 @@ public class Movement : MonoBehaviour
         {
             Dashing();
         }
-
     }
 
 
@@ -242,8 +237,6 @@ public class Movement : MonoBehaviour
 
         gameObject.layer = 9;
     }
-
-    
     
     //call this on update
     public IEnumerator UpdateTimerUI()
@@ -259,31 +252,4 @@ public class Movement : MonoBehaviour
         }
     }
 
-
-
-
-
-
-
-
-
-    // Code Graveyard
-    /*IEnumerator slowDown()
-    {
-        float newJumpForce = 0;
-        Time.timeScale = 0.5f;
-        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
-
-        newJumpForce = jumpForce * 1.5f;
-        jumpForce = newJumpForce;
-
-        iAmSpeed = 1.5f;
-
-        yield return new WaitForSeconds(1f);
-       
-        jumpForce = 22;
-        iAmSpeed = 1;
-        Time.timeScale = 1.0f;
-        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
-    }*/
 }

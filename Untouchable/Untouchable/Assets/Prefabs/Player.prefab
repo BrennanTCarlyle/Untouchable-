@@ -261,7 +261,7 @@ MonoBehaviour:
   Pause: {fileID: 0}
   timerText: {fileID: 0}
   jumpForce: 21
-  gravForce: 0.5
+  gravForce: 0.7
   dashSpeed: 30
   iAmSpeed: 0
   waitTime: 4.25

@@ -54,7 +54,6 @@ public class PauseMenuBehavior : MainMenuBehavior
         if (Input.GetKeyDown("escape"))
         {
             GamePaused();
-            Debug.Log("Pausing");
         }
     }
 

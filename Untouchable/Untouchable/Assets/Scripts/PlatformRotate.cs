@@ -4,88 +4,78 @@ using UnityEngine;
 
 public class PlatformRotate : MonoBehaviour
 {
-    public float speed = 300f;
-    private Vector3 destination;
-    private bool isSwitching;
+    private float _degreesToShift = 90;
+    private float _maxDegrees = 270;
+    readonly float _speed = 350;
+    readonly float _margin = 10;
+    private Vector3 _destination;
+    private bool _isSwitching;
+    private bool _isMoving;
+    private bool _isRight;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale == 1)
+        if (!_isSwitching)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                if(!isSwitching)
-                    StartCoroutine(SwitchPlane(true));
+                SetSwitching(true);
             }
             if (Input.GetMouseButtonDown(1))
             {
-                if(!isSwitching)
-                    StartCoroutine(SwitchPlane(false));
+                SetSwitching(false);
             }
         }
     }
 
-    private IEnumerator SwitchPlane(bool isRight)
+    public void SetSwitching(bool givenDirection)
     {
-        isSwitching = true;
-        if (isRight)
+        _isSwitching = true;
+        _isRight = givenDirection;
+        if (_isRight)
         {
-            if (transform.localEulerAngles.z >= 270)
+            if (transform.localEulerAngles.z < _maxDegrees)
             {
-                destination = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 0.1f);
-                while(transform.eulerAngles.z > destination.z)
-                {
-                    transform.Rotate (Vector3.forward * (speed * Time.fixedDeltaTime));
-                    yield return null;
-                }
-                transform.eulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 0);
+                _destination = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z + _degreesToShift);
             }
             else
             {
-                destination = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z + 90f);
-                while(transform.eulerAngles.z < destination.z)
-                {
-                    transform.Rotate (Vector3.forward * (speed * Time.fixedDeltaTime));
-                    yield return null;
-                }
-                transform.eulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, destination.z);
+                _destination = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 0);
             }
         }
-        if (!isRight)
+        else if (!_isRight)
         {
-            if (transform.localEulerAngles.z <= 5 && transform.localEulerAngles.z >= 0 )
+            if (transform.localEulerAngles.z <= _margin && transform.localEulerAngles.z >= 0)
             {
-                destination = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 270f);
-                while(transform.eulerAngles.z < destination.z)
-                {
-                    transform.Rotate (Vector3.back * (speed * Time.fixedDeltaTime));
-                    yield return null;
-                }
-                while(transform.eulerAngles.z > destination.z)
-                {
-                    transform.Rotate (Vector3.back * (speed * Time.fixedDeltaTime));
-                    yield return null;
-                }
-                transform.eulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, destination.z);
+                _destination = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, _maxDegrees);
             }
             else
             {
-                destination = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z - 90f);
-                while(transform.eulerAngles.z > destination.z)
-                {
-                    transform.Rotate (Vector3.back * (speed * Time.fixedDeltaTime));
-                    yield return null;
-                }
-                transform.eulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, destination.z);
+                _destination = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z - _degreesToShift);
             }
         }
-        isSwitching = false;
+        _isMoving = true;
+    }
+
+    private void FixedUpdate()
+    {
+        if (_isSwitching && _isMoving)
+        {
+            if (_isRight)
+            {
+                transform.Rotate (Vector3.forward * (_speed * Time.fixedDeltaTime));
+            }
+            else if (!_isRight)
+            {
+                transform.Rotate (Vector3.back * (_speed * Time.fixedDeltaTime));
+            }
+
+            if (transform.eulerAngles.z > _destination.z - _margin && transform.eulerAngles.z < _destination.z + _margin)
+            {
+                _isSwitching = false;
+                _isMoving = false;
+                transform.eulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, _destination.z);
+            }
+        }     
     }
 }
